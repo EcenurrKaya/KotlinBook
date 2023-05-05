@@ -2,7 +2,9 @@ package com.example.kotlinbook
 
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.database.sqlite.SQLiteDatabase
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.graphics.ImageDecoder
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -23,6 +25,7 @@ class ArtActivity : AppCompatActivity() {
     private lateinit var activityResultLauncher : ActivityResultLauncher<Intent>
     private lateinit var permissionLauncher:ActivityResultLauncher<String>
     var selectedBitmap : Bitmap? = null
+    private lateinit var database:SQLiteDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +33,37 @@ class ArtActivity : AppCompatActivity() {
         val view=binding.root
         setContentView(view)
 
+        database=this.openOrCreateDatabase("Books", MODE_PRIVATE,null)
+
         registerLauncher()
+
+        val intent = intent
+        val info = intent.getStringExtra("info")
+        if(info.equals("new")){
+            binding.editTextKitapAdi.setText("")
+            binding.editTextZet.setText("")
+            binding.imageView.setImageResource(R.drawable.boook)
+
+        }
+        else{
+            val selectedId=intent.getIntExtra("id",1)
+            val cursor =database.rawQuery("SELECT * FROM books WHERE id=?", arrayOf(selectedId.toString()))
+
+            val kitapIx=cursor.getColumnIndex("kitapadi")
+            val ozetIx=cursor.getColumnIndex("ozet")
+            val imageIx=cursor.getColumnIndex("image")
+
+            while(cursor.moveToNext()){
+                binding.editTextKitapAdi.setText(cursor.getString(kitapIx))
+                binding.editTextZet.setText(cursor.getString(ozetIx))
+
+                val byteArray=cursor.getBlob(imageIx)
+                val bitmap=BitmapFactory.decodeByteArray(byteArray,0,byteArray.size)
+                binding.imageView.setImageBitmap(bitmap)
+
+            }
+
+        }
     }
 
     fun selectimage(view: View){
@@ -85,7 +118,7 @@ class ArtActivity : AppCompatActivity() {
             val byteArray=outputstream.toByteArray()
 
             try{
-                val database=this.openOrCreateDatabase("Books", MODE_PRIVATE,null)
+
                 database.execSQL("CREATE TABLE IF NOT EXISTS books (id INTEGER PRIMARY KEY, kitapadi VARCHAR, ozet VARCHAR,image BLOB)")
 
                 val sqlString = "INSERT INTO books (kitapadi,ozet,image) VALUES(?,?,?)"
