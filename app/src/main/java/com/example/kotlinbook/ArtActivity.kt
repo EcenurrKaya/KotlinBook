@@ -43,9 +43,11 @@ class ArtActivity : AppCompatActivity() {
             binding.editTextKitapAdi.setText("")
             binding.editTextZet.setText("")
             binding.imageView.setImageResource(R.drawable.boook)
+            //binding.floatingActionButton.visibility=View.VISIBLE
 
         }
         else{
+            //binding.floatingActionButton.visibility=View.INVISIBLE
             val selectedId=intent.getIntExtra("id",1)
             val cursor =database.rawQuery("SELECT * FROM books WHERE id=?", arrayOf(selectedId.toString()))
 
@@ -111,7 +113,7 @@ class ArtActivity : AppCompatActivity() {
         val ozet=binding.editTextZet.text.toString()
 
         if(selectedBitmap!=null){
-            val smallBitmap=makesmallBitmap(selectedBitmap!!, maximumSize = 300)
+            val smallBitmap=makesmallBitmap(selectedBitmap!!,  300)
 
             val outputstream =ByteArrayOutputStream()
             smallBitmap.compress(Bitmap.CompressFormat.PNG,50,outputstream)

@@ -28,7 +28,7 @@ class MainRecycler : AppCompatActivity() {
         try{
             val database=this.openOrCreateDatabase("Books", MODE_PRIVATE,null)
             val cursor=database.rawQuery("SELECT * FROM books",null)
-            val kitapadiIx=cursor.getColumnIndex("kitapadi")
+            val kitapadiIx = cursor.getColumnIndex("kitapadi")
             val idIx=cursor.getColumnIndex("id")
 
             while(cursor.moveToNext()){
@@ -61,8 +61,9 @@ class MainRecycler : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    fun AddBook(view: View){
+   fun AddBook(view: View){
         val intent = Intent(this@MainRecycler,ArtActivity::class.java)
+        intent.putExtra("info","new")
         startActivity(intent)
     }
 }
