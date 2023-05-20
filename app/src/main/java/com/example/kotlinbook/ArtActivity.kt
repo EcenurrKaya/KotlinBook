@@ -142,6 +142,7 @@ class ArtActivity : AppCompatActivity() {
 
     }
 
+
     private fun makesmallBitmap(image:Bitmap, maximumSize:Int):Bitmap{
         var width = image.width
         var height = image.height

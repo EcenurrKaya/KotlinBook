@@ -66,4 +66,5 @@ class MainRecycler : AppCompatActivity() {
         intent.putExtra("info","new")
         startActivity(intent)
     }
+
 }
