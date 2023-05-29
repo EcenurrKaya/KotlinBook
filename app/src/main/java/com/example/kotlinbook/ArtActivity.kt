@@ -109,6 +109,7 @@ class ArtActivity : AppCompatActivity() {
     }
 
     fun savebutonclicked(view:View){
+        Toast.makeText(applicationContext,"Kaydedildi",Toast.LENGTH_LONG).show()
         val kitapadi = binding.editTextKitapAdi.text.toString()
         val ozet=binding.editTextZet.text.toString()
 

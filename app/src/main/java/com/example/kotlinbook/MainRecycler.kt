@@ -58,6 +58,11 @@ class MainRecycler : AppCompatActivity() {
             intent.putExtra("info","new")
             startActivity(intent)
         }
+        else if(item.itemId==R.id.bildirim){
+            val intent = Intent(this@MainRecycler,Bildirim::class.java)
+            intent.putExtra("info", "new")
+            startActivity(intent)
+        }
         return super.onOptionsItemSelected(item)
     }
 
