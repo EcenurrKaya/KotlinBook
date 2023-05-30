@@ -7,19 +7,18 @@
     android:orientation="vertical"
     tools:context=".Bildirim">
 
-
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingHorizontal="20dp"
         android:layout_marginTop="20dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/titleEt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Title" />
+            android:hint="@string/title" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -27,13 +26,13 @@
         android:layout_height="wrap_content"
         android:paddingHorizontal="20dp"
         android:layout_marginTop="20dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/messageEt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Message" />
+            android:hint="@string/message" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout
@@ -41,10 +40,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp">
         <DatePicker
-            android:id="@+id/date"
+            android:id="@+id/datePicker"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_height="wrap_content"
             android:datePickerMode="spinner"
             android:calendarViewShown="false"
             android:layout_gravity="center"
@@ -54,10 +53,10 @@
             android:layout_marginRight="-30dp"></DatePicker>
 
         <TimePicker
-            android:id="@+id/time"
+            android:id="@+id/timePicker"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_height="wrap_content"
             android:timePickerMode="spinner"
             android:layout_gravity="center"
             android:scaleY="0.7"
@@ -67,10 +66,10 @@
     </LinearLayout>
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/buton"
         android:layout_marginTop="20dp"
         android:layout_gravity="center"
-        android:text="Notification"></Button>
+        android:text="Notification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></Button>
 </LinearLayout>
