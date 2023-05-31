@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_intro"
+    android:background="@color/white"
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".KitapFiyat">
@@ -29,7 +29,7 @@
         android:layout_marginBottom="10dp"
         android:hint="Kitap ismi giriniz:"
         android:textColor="#A59898"
-        android:textColorHint="#5C5B5B"></EditText>
+        android:textColorHint="#4A4949"></EditText>
 
 
     <TextView
@@ -58,8 +58,8 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="150dp"
         android:layout_marginTop="30dp"
-        android:background="@drawable/background_button2"
-        android:text="Search"
+        android:background="@drawable/eklebutton"
+        android:text="Bul"
         android:textStyle="bold"></Button>
 
     <ProgressBar

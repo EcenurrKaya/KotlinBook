@@ -15,6 +15,7 @@
         android:layout_marginTop="110dp"
         android:layout_marginEnd="174dp"
         android:text="Hoşgeldiniz"
+        android:fontFamily="@font/nablaregular"
         android:textSize="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

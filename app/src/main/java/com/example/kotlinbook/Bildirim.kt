@@ -30,7 +30,7 @@ class Bildirim : AppCompatActivity() {
     private fun scheludeNotification() {
         val intent = Intent(applicationContext,Notification::class.java)
         val title = binding.titleEt.text.toString()
-        val message = binding.titleEt.text.toString()
+        val message = binding.messageEt.text.toString()
         intent.putExtra(titleExtra,title)
         intent.putExtra(messageExtra,message)
 
@@ -47,7 +47,7 @@ class Bildirim : AppCompatActivity() {
         val dateFormat = android.text.format.DateFormat.getLongDateFormat(applicationContext)
         val timeFormat = android.text.format.DateFormat.getTimeFormat(applicationContext)
 
-        AlertDialog.Builder(this).setTitle("Scheduled").setMessage("Title"+title+"\nMessage"+message+"\nAt"+dateFormat.format(date)+" "+timeFormat.format(date))
+        AlertDialog.Builder(this).setTitle("Scheduled").setMessage("Başlık: "+title+"\nMesaj: "+message+"\nZaman: "+dateFormat.format(date)+" "+timeFormat.format(date))
             .setPositiveButton("Okay"){_,_ ->}
             .show()
     }

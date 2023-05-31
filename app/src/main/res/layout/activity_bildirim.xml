@@ -18,7 +18,8 @@
             android:id="@+id/titleEt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/title" />
+            android:hint="Başlık"
+            android:textColorHint="#673AB7" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -32,7 +33,8 @@
             android:id="@+id/messageEt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/message" />
+            android:hint="Mesaj"
+            android:textColorHint="#673AB7" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout
@@ -67,9 +69,10 @@
 
     <Button
         android:id="@+id/buton"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center"
-        android:text="Notification"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"></Button>
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/eklebutton"
+        android:text="gönder"></Button>
 </LinearLayout>

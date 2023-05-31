@@ -13,16 +13,25 @@
 
         <TextView
             android:id="@+id/textView3"
-            android:layout_width="400dp"
+            android:layout_width="370dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="2dp"
             android:background="@drawable/gorunum"
             android:padding="12dp"
             android:text="TextView"
             android:textSize="24dp" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:layout_weight="1"
+            android:onClick="delete"
+            app:srcCompat="@drawable/baseline_delete_24" />
 
     </LinearLayout>
 
